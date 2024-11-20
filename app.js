@@ -2,19 +2,19 @@ new Vue({
     el: '#app',
     data: {
         images: [
-            'Media/A Bug\'s Life.jpg1',
+            'Media/A Bugs Life.jpg1',
             'Media/Day At The Beach 1947.jpg',
             'Media/Growing Wild.jpg',
             'Media/Our Future.jpg',
-            'Media/Wastin\' Time.jpg',
+            'Media/Wastin Time.jpg',
             'Media/Worn Out.jpg'
         ],
         galleryImages: [
-            'Media/A Bug\'s Life.jpg1',
+            'Media/A Bugs Life.jpg1',
             'Media/Day At The Beach 1947.jpg',
             'Media/Growing Wild.jpg',
             'Media/Our Future.jpg',
-            'Media/Wastin\' Time.jpg',
+            'Media/Wastin Time.jpg',
             'Media/Worn Out.jpg'
         ]
     },
