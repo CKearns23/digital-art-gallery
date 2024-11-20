@@ -2,7 +2,7 @@ new Vue({
   el: '#app',
   data: {
       images: [
-      "assets/Media/A Bugs Life.jpg1",
+      "assets/Media/A Bugs Life.jpg",
       "assets/Media/Day At The Beach 1947.jpg",
       "assets/Media/Growing Wild.jpg",
       "assets/Media/Our Future.jpg",
@@ -10,7 +10,7 @@ new Vue({
       "assets/Media/Worn Out.jpg"
     ],
       galleryImages: [
-        "assets/Media/A Bugs Life.jpg1",
+        "assets/Media/A Bugs Life.jpg",
         "assets/Media/Day At The Beach 1947.jpg",
         "assets/Media/Growing Wild.jpg",
         "assets/Media/Our Future.jpg",
