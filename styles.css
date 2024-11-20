@@ -87,6 +87,10 @@ body {
   background: rgba(229, 184, 184, 0.7);
 }
 
+.splide__arrow .splide__arrow__icon {
+  color: rgba(229, 184, 184, 1); /* Change icon color to dusty rose */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .gallery-section {
