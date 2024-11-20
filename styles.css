@@ -4,41 +4,24 @@
   padding: 20px 0;
   text-align: center;
 }
-
-#carouselgallery .carousel-item img {
-  width: 100%;  /* Ensures the image fits within its container */
-  max-height: 300px;  /* Set a fixed height for the carousel */
-  object-fit: cover;  /* Ensures the image maintains its aspect ratio while covering the area */
-}
-
 .gallery-section img {
   width: 100%;
   height: auto;
-  transition: transform 0.3s ease;
 }
-
-.gallery-section img:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
 .video-section iframe {
   width: 100%;
   height: 400px;
 }
-
 .gallery-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
-
 @media (max-width: 768px) {
   .gallery-section {
       grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-width: 480px) {
   .gallery-section {
       grid-template-columns: 1fr;
