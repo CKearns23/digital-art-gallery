@@ -1,113 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Hero Section</title>
-    <!-- Link to External CSS -->
+    <title>Digital Art Gallery</title>
     <link href="styles.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ6Q+6N0W1tOHXed06u7U6tvo5p3LStOBsXkKgnhe9iKscPp6TjBFDUN8wEa" crossorigin="anonymous">
-    <!-- Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-  </head>
+</head>
 <body>
 
-  <!-- Hero Section -->
-  <div id="app">
-  <section class="hero d-flex justify-content-center align-items-center text-center text-white p-5">
-    <div class="container">
-      <h1 class="display-3">Welcome to Our Site</h1>
-      <p class="lead">Your journey starts here with amazing content!</p>
-    </div>
-  </section>
-  </div>
-  <!-- Carousel Section -->
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="Media/A Bugs Life.jpg" class="d-block w-100 img-fluid" alt="A Bugs Life">
-      </div>
-      <div class="carousel-item">
-        <img src="Media/Day At The Beach 1947.jpg" class="d-block w-100 img-fluid" alt="Day At The Beach 1947">
-      </div>
-      <div class="carousel-item">
-        <img src="Media/Growing Wild.jpg" class="d-block w-100 img-fluid" alt="Growing Wild">
-      </div>
-      <div class="carousel-item">
-        <img src="Media/Our Future.jpg" class="d-block w-100 img-fluid" alt="Our Future">
-      </div>
-      <div class="carousel-item">
-        <img src="Media/Wastin Time.jpg" class="d-block w-100 img-fluid" alt="Wastin Time">
-      </div>
-      <div class="carousel-item">
-        <img src="Media/Worn Out.jpg" class="d-block w-100 img-fluid" alt="Worn Out">
-      </div>
-    </div>
-  </div>
+    <div id="app">
+        <header class="header">
+            <h1>Digital Art Gallery</h1>
+        </header>
 
-  <!-- Video Section -->
-  <div class="video-container my-4">
-    <video controls class="w-100">
-      <source src="Media/artgalleryvideo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" v-for="(image, index) in images" :key="index" :class="{'active': index === 0}">
+                    <img :src="image" class="d-block w-100" alt="Art">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
-  <!-- Gallery Section -->
-  <div class="gallery my-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-6 col-12 mb-4">
-          <div class="gallery-item">
-            <img src="Media/A Bugs Life.jpg" class="img-fluid" alt="A Bugs Life">
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mb-4">
-          <div class="gallery-item">
-            <img src="Media/Day At The Beach 1947.jpg" class="img-fluid" alt="Day At The Beach 1947">
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mb-4">
-          <div class="gallery-item">
-            <img src="Media/Growing Wild.jpg" class="img-fluid" alt="Growing Wild">
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mb-4">
-          <div class="gallery-item">
-            <img src="Media/Our Future.jpg" class="img-fluid" alt="Our Future">
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mb-4">
-          <div class="gallery-item">
-            <img src="Media/Wastin Time.jpg" class="img-fluid" alt="Wastin Time">
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mb-4">
-          <div class="gallery-item">
-            <img src="Media/Worn Out.jpg" class="img-fluid" alt="Worn Out">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-<!-- Modal Structure -->
-<div v-if="isModalOpen" class="modal fade show" style="display: block;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" @click="closeModal">&times;</button>
-      </div>
-      <div class="modal-body">
-        <img :src="selectedImage.src" :alt="selectedImage.alt" class="img-fluid">
-      </div>
-    </div>
-  </div>
-</div>
+        <section class="video-section">
+            <iframe src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
 
-  <!-- Bootstrap JS (for interactive components like Carousel) -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybK7kVt2WxG5oJgK5w8+2PiOg3y6Tj5r53SKfXit3+KEkWnS5" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cu4zmGA1EppJFEJl+FLXtK/lfO4FVVkz9BXbhX5z09QccQjc5elNPUFZKvR1Qf9" crossorigin="anonymous"></script>
+        <section class="gallery-section">
+            <div class="gallery-item" v-for="(image, index) in galleryImages" :key="index">
+                <img :src="image" alt="Gallery Image">
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
