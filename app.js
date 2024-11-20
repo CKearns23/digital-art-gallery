@@ -1,30 +1,26 @@
 new Vue({
     el: '#app',
     data: {
-        images: [
-            'Media/A Bugs Life.jpg1',
-            'Media/Day At The Beach 1947.jpg',
-            'Media/Growing Wild.jpg',
-            'Media/Our Future.jpg',
-            'Media/Wastin Time.jpg',
-            'Media/Worn Out.jpg'
-        ],
-        galleryImages: [
-            'Media/A Bugs Life.jpg1',
-            'Media/Day At The Beach 1947.jpg',
-            'Media/Growing Wild.jpg',
-            'Media/Our Future.jpg',
-            'Media/Wastin Time.jpg',
-            'Media/Worn Out.jpg'
-        ]
+        images: [],
+        galleryImages: [],
+        videoSrc: ''
+    },
+    created() {
+        fetch('assets/galleryData.json') // Make sure this path is correct for your project structure
+            .then(response => response.json())
+            .then(data => {
+                this.images = data.images;
+                this.galleryImages = data.galleryImages;
+                this.videoSrc = data.videoSrc;
+            });
     },
     mounted() {
         // Initialize SplideJS after the DOM is ready
         new Splide('#image-carousel', {
-            type: 'fade',       // Use fade transition
-            heightRatio: 0.5,    // Adjust carousel height ratio
-            autoplay: true,      // Enable autoplay
-            interval: 3000       // Set the interval for slide transition
+            type: 'fade',
+            heightRatio: 0.5,
+            autoplay: true,
+            interval: 3000
         }).mount();
     }
 });
