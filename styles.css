@@ -1,19 +1,10 @@
-/* Header Styling */
 .header {
-  background-color: #e5b8b8; /* Dusty pink */
+  background-color: #e5b8b8; /* dusty pink */
   color: black;
   padding: 20px 0;
   text-align: center;
 }
 
-/* Splide Carousel Styling */
-.splide__slide img {
-  width: 100%;
-  height: auto;
-  object-fit: cover; /* Ensures images maintain their aspect ratio */
-}
-
-/* Gallery Section Styling */
 .gallery-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -22,10 +13,10 @@
 
 .gallery-section img {
   width: 100%;
-  height: 150px; /* Consistent height for images */
-  object-fit: cover; /* Ensures the images are cropped to fit their container */
+  height: 150px; /* Ensure consistent height */
+  object-fit: cover; /* Ensure the images are cropped to fit their container */
   transition: transform 0.3s ease;
-  border-radius: 5px; /* Rounded edges */
+  border-radius: 5px; /* Optional: Make the edges slightly rounded */
 }
 
 .gallery-section img:hover {
@@ -33,21 +24,19 @@
   cursor: pointer;
 }
 
-/* Video Section Styling */
 .video-section iframe {
   width: 100%;
   height: 400px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .gallery-section {
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
+      grid-template-columns: repeat(2, minmax(100px, 1fr));
   }
 }
 
 @media (max-width: 480px) {
   .gallery-section {
-    grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
   }
 }

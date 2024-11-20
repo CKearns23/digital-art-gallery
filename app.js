@@ -1,26 +1,32 @@
 new Vue({
-    el: '#app',
-    data: {
-        images: [],
-        galleryImages: [],
-        videoSrc: ''
-    },
-    created() {
-        fetch('assets/galleryData.json') // Make sure this path is correct for your project structure
-            .then(response => response.json())
-            .then(data => {
-                this.images = data.images;
-                this.galleryImages = data.galleryImages;
-                this.videoSrc = data.videoSrc;
-            });
-    },
-    mounted() {
-        // Initialize SplideJS after the DOM is ready
-        new Splide('#image-carousel', {
-            type: 'fade',
-            heightRatio: 0.5,
-            autoplay: true,
-            interval: 3000
-        }).mount();
-    }
+  el: '#app',
+  data: {
+      images: [
+      "assets/Media/A Bugs Life.jpg",
+      "assets/Media/Day At The Beach 1947.jpg",
+      "assets/Media/Growing Wild.jpg",
+      "assets/Media/Our Future.jpg",
+      "assets/Media/Wastin' Time.jpg",
+      "assets/Media/Worn Out.jpg"
+    ],
+      galleryImages: [
+        "assets/Media/A Bugs Life.jpg",
+        "assets/Media/Day At The Beach 1947.jpg",
+        "assets/Media/Growing Wild.jpg",
+        "assets/Media/Our Future.jpg",
+        "assets/Media/Wastin' Time.jpg",
+        "assets/Media/Worn Out.jpg"
+    ],
+      videoSrc: "assets/Media/artgalleryvideo.mp4"
+  },
+  created() {
+    fetch('assets/data.json')
+          .then(response => response.json())
+          .then(data => {
+              this.images = data.images;
+              this.galleryImages = data.galleryImages;
+              this.videoSrc = data.videoSrc;
+              document.querySelector('.video-section iframe').src = this.videoSrc;
+          });
+  }
 });
