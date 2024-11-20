@@ -1,32 +1,30 @@
 new Vue({
-  el: '#app',
-  data: {
-      images: [
-      "assets/Media/A Bugs Life.jpg",
-      "assets/Media/Day At The Beach 1947.jpg",
-      "assets/Media/Growing Wild.jpg",
-      "assets/Media/Our Future.jpg",
-      "assets/Media/Wastin' Time.jpg",
-      "assets/Media/Worn Out.jpg"
-    ],
-      galleryImages: [
-        "assets/Media/A Bugs Life.jpg",
-        "assets/Media/Day At The Beach 1947.jpg",
-        "assets/Media/Growing Wild.jpg",
-        "assets/Media/Our Future.jpg",
-        "assets/Media/Wastin' Time.jpg",
-        "assets/Media/Worn Out.jpg"
-    ],
-      videoSrc: "assets/Media/artgalleryvideo.mp4"
-  },
-  created() {
-    fetch('assets/data.json')
-          .then(response => response.json())
-          .then(data => {
-              this.images = data.images;
-              this.galleryImages = data.galleryImages;
-              this.videoSrc = data.videoSrc;
-              document.querySelector('.video-section iframe').src = this.videoSrc;
-          });
-  }
+    el: '#app',
+    data: {
+        images: [
+            'Media/A Bug\'s Life.jpg1',
+            'Media/Day At The Beach 1947.jpg',
+            'Media/Growing Wild.jpg',
+            'Media/Our Future.jpg',
+            'Media/Wastin\' Time.jpg',
+            'Media/Worn Out.jpg'
+        ],
+        galleryImages: [
+            'Media/A Bug\'s Life.jpg1',
+            'Media/Day At The Beach 1947.jpg',
+            'Media/Growing Wild.jpg',
+            'Media/Our Future.jpg',
+            'Media/Wastin\' Time.jpg',
+            'Media/Worn Out.jpg'
+        ]
+    },
+    mounted() {
+        // Initialize SplideJS after the DOM is ready
+        new Splide('#image-carousel', {
+            type: 'fade',       // Use fade transition
+            heightRatio: 0.5,    // Adjust carousel height ratio
+            autoplay: true,      // Enable autoplay
+            interval: 3000       // Set the interval for slide transition
+        }).mount();
+    }
 });
