@@ -6,7 +6,7 @@ new Vue({
       videoSrc: ''
   },
   created() {
-      fetch('assets/data.json')
+      fetch('assets/galleryData.json')
           .then(response => response.json())
           .then(data => {
               this.images = data.images;
