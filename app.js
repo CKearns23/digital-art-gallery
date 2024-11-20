@@ -1,18 +1,23 @@
 new Vue({
     el: '#app',
     data: {
-        images: [],
-        galleryImages: [],
-        videoSrc: ''
-    },
-    created() {
-        fetch('assets/galleryData.json')
-            .then(response => response.json())
-            .then(data => {
-                this.images = data.images;
-                this.galleryImages = data.galleryImages;
-                this.videoSrc = data.videoSrc;
-            });
+        images: [
+            'assets/Media/A Bugs Life.jpg',
+            'assets/Media/Day At The Beach 1947.jpg',
+            'assets/Media/Our Future.jpg',
+            'assets/Media/Growing Wild.jpg',
+            'assets/Media/Wastin Time.jpg',
+            'assets/Media/Worn Out.jpg'
+        ],
+        galleryImages: [
+            'assets/Media/A Bugs Life.jpg',
+            'assets/Media/Day At The Beach 1947.jpg',
+            'assets/Media/Our Future.jpg',
+            'assets/Media/Growing Wild.jpg',
+            'assets/Media/Wastin Time.jpg',
+            'assets/Media/Worn Out.jpg'
+        ],
+        videoSrc: 'assets/Media/artgalleryvideo.mp4'
     },
     mounted() {
         new Splide('#image-carousel', {
