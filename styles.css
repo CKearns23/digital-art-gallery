@@ -6,6 +6,17 @@
   text-align: center;
 }
 
+/* Footer Styling */
+.footer {
+  background-color: #e5b8b8; /* Dusty pink */
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
 /* Splide Carousel Styling */
 .splide__slide img {
   width: 100%;
