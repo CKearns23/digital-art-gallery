@@ -25,8 +25,8 @@ new Vue({
             heightRatio: 0.5,
             autoplay: true,
             interval: 3000,
-            arrows: true,  // Enable arrows
-            pagination: false  // Disable pagination dots
+            arrows: true,
+            pagination: false
         }).mount();
     }
 });
