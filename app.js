@@ -20,13 +20,18 @@ new Vue({
         videoSrc: 'assets/Media/artgalleryvideo.mp4'
     },
     mounted() {
-        new Splide('#image-carousel', {
-            type: 'fade',
-            heightRatio: 0.5,
-            autoplay: true,
-            interval: 3000,
-            arrows: true,
-            pagination: false
-        }).mount();
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
+            }
+        });
     }
 });

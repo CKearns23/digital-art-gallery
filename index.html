@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Art Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/splide@3.6.1/dist/css/splide.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -14,20 +14,15 @@
     </header>
 
     <div id="app">
-        <section id="image-carousel" class="splide" aria-label="Beautiful Images">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide" v-for="(image, index) in images" :key="index">
-                        <img :src="image" alt="Art">
-                    </li>
-                </ul>
+        <!-- Swiper Carousel -->
+        <section id="image-carousel" class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="(image, index) in images" :key="index">
+                    <img :src="image" alt="Art">
+                </div>
             </div>
-            <button class="splide__arrow splide__arrow--prev">
-                <span class="splide__arrow__icon">←</span>
-            </button>
-            <button class="splide__arrow splide__arrow--next">
-                <span class="splide__arrow__icon">→</span>
-            </button>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </section>
 
         <section class="video-section">
@@ -47,7 +42,7 @@
         <p>&copy; 2024 Digital Art Gallery. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/splide@3.6.1/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
