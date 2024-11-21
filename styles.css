@@ -45,6 +45,7 @@ body {
 .gallery-section img:hover {
   transform: scale(1.0);
   cursor: pointer;
+  filter: blur(0px);
 }
 
 /* Video Section Styling */
