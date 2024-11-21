@@ -39,12 +39,12 @@ body {
   object-fit: cover; /* Ensures the images maintain their aspect ratio */
   transition: transform 0.3s ease;
   border-radius: 5px; /* Rounded edges */
+  filter: blur(2px);
 }
 
 .gallery-section img:hover {
   transform: scale(1.0);
   cursor: pointer;
-  filter: blur(2px);
 }
 
 /* Video Section Styling */
