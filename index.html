@@ -31,16 +31,11 @@
 
         <section class="gallery-section">
             <div class="gallery-item" v-for="(image, index) in galleryImages" :key="index">
-                <a href="javascript:void(0);" @click="openImageModal(image)">
+                <a :href="image" data-lightbox="gallery">
                     <img :src="image" alt="Gallery Image">
                 </a>
             </div>
         </section>
-    </div>
-
-    <!-- Modal to view image in fullscreen -->
-    <div v-if="isModalOpen" class="image-modal" @click="closeImageModal">
-        <img :src="modalImage" alt="Modal Image">
     </div>
 
     <footer class="footer">

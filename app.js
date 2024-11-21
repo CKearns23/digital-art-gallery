@@ -17,9 +17,7 @@ new Vue({
             'assets/Media/Wastin Time.jpg',
             'assets/Media/Worn Out.jpg'
         ],
-        videoSrc: 'assets/Media/artgalleryvideo.mp4',
-        isModalOpen: false,  // Controls if the modal is visible
-        modalImage: ''       // The image to be shown in the modal
+        videoSrc: 'assets/Media/artgalleryvideo.mp4'
     },
     mounted() {
         const swiper = new Swiper('.swiper-container', {
@@ -35,21 +33,5 @@ new Vue({
                 disableOnInteraction: false
             }
         });
-    },
-    methods: {
-        openImageModal(image) {
-            // If the same image is clicked again, close the modal
-            if (this.isModalOpen && this.modalImage === image) {
-                this.closeImageModal();
-            } else {
-                this.modalImage = image;
-                this.isModalOpen = true;
-                document.body.classList.add('modal-open');  // Prevent page scroll when modal is open
-            }
-        },
-        closeImageModal() {
-            this.isModalOpen = false;
-            document.body.classList.remove('modal-open');
-        }
     }
 });
