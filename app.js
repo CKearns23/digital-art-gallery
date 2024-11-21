@@ -33,28 +33,5 @@ new Vue({
                 disableOnInteraction: false
             }
         });
-
-        const modal = document.getElementById("image-modal");
-        const closeModal = document.getElementById("close-modal");
-
-        const galleryImages = document.querySelectorAll('.gallery-section img');
-        galleryImages.forEach(image => {
-            image.addEventListener('click', (e) => {
-                const src = e.target.src;
-                document.getElementById("modal-image").src = src;
-                modal.style.display = "block";
-            });
-        });
-
-        closeModal.addEventListener('click', (event) => {
-            modal.style.display = "none";
-            event.stopPropagation();
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
     }
 });
