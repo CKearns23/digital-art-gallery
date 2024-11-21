@@ -1,19 +1,17 @@
 body {
-  background-color: black; /* Black background for the whole page */
-  color: white; /* White text to contrast the black background */
+  background-color: black;
+  color: white;
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
-/* Header Styling */
 .header {
-  background-color: #e5b8b8; /* Dusty pink */
+  background-color: #e5b8b8;
   color: black;
   padding: 20px 0;
   text-align: center;
 }
 
-/* Swiper Carousel Styling */
 .swiper-container {
   width: 100%;
   height: 400px;
@@ -23,22 +21,21 @@ body {
 .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Ensures images are fully visible */
+  object-fit: contain;
 }
 
-/* Gallery Section Styling - 3x3 Grid */
 .gallery-section {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
 .gallery-section img {
   width: 100%;
   height: 150px;
-  object-fit: cover; /* Ensures the images maintain their aspect ratio */
+  object-fit: cover;
   transition: transform 0.3s ease;
-  border-radius: 5px; /* Rounded edges */
+  border-radius: 5px;
   filter: blur(2px);
 }
 
@@ -48,19 +45,17 @@ body {
   filter: blur(0px);
 }
 
-/* Video Section Styling */
 .video-section iframe {
   width: 100%;
   height: 400px;
   border: none;
   display: block;
   margin: 20px auto;
-  background-color: white; /* Video section with no black background */
+  background-color: white;
 }
 
-/* Footer Styling */
 .footer {
-  background-color: #e5b8b8; /* Dusty pink */
+  background-color: #e5b8b8;
   color: black;
   padding: 10px 0;
   text-align: center;
@@ -68,51 +63,9 @@ body {
   bottom: 0;
 }
 
-/* Modal (hidden by default) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Black background with transparency */
-  overflow: auto;
-  padding-top: 60px;
-}
-
-/* Modal Content (the image) */
-.modal img {
-  margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 80%;
-  margin-top: 50px;
-}
-
-/* Close Button */
-.close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: #f1f1f1;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Splide Carousel Arrows */
 .splide__arrow.splide__arrow--prev {
-  background-color: rgba(229, 184, 184, 0.7); /* Dusty rose background */
-  color: white; /* White arrow icon */
+  background-color: rgba(229, 184, 184, 0.7);
+  color: white;
   border-radius: 50%;
   padding: 10px;
   position: absolute;
@@ -121,8 +74,8 @@ body {
 }
 
 .splide__arrow.splide__arrow--next {
-  background-color: rgba(229, 184, 184, 0.7); /* Dusty rose background */
-  color: white; /* White arrow icon */
+  background-color: rgba(229, 184, 184, 0.7);
+  color: white;
   border-radius: 50%;
   padding: 10px;
   position: absolute;
@@ -138,7 +91,6 @@ body {
   right: 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .gallery-section {
       grid-template-columns: repeat(2, minmax(100px, 1fr));
@@ -149,4 +101,41 @@ body {
   .gallery-section {
       grid-template-columns: 1fr;
   }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal img {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
